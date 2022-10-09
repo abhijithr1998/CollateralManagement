@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "collateral-ce61"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "collateral-ce61"
+  template:
+    metadata:
+      labels:
+        app: "collateral-ce61"
+    spec:
+      containers:
+        - name: "collateral-ce61"
+          image: "newconatiner.azurecr.io/collateral"
+          ports:
+          - containerPort: 80
